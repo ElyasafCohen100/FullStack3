@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* ===== Left Section - Form ===== */
+.left-section {
+    width: 40%;
+    text-align: left;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels and Inputs */
+.input-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+.input-group label {
+    width: 120px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+input[type="file"] {
+    margin-top: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* ===== Right Section - Contact List ===== */
+.right-section {
+    width: 55%;
+    background: #E3F2FD;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.contact:hover {
+    background: #f1f1f1;
+}
+
+.contact img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contact-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.contact-phone {
+    color: #555;
+    font-size: 14px;
+}
+
+.edit-btn, .delete-btn {
+    background-color: #ffcc00;
+    color: black;
+    padding: 7px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 20%;
+}
+
+.edit-btn:hover {
+    background-color: #ff9900;
+}
+
+.delete-btn {
+    background-color: orangered;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+#deleteSelected {
+    background-color: red;
+    margin-top: 10px;
+}

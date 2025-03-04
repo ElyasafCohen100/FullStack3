@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Book</title>
+    <link rel="stylesheet" href="../CSS/PhoneBookUI.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Left Section - Contact Form -->
+        <div class="left-section">
+            <h1>📞 Phone Book 📞</h1>
+
+            <!-- Add Contact Form -->
+            <form id="contactForm">
+                <div class="input-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" placeholder="Enter first name..." required>
+                </div>
+
+                <div class="input-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" placeholder="Enter last name..." required>
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" placeholder="Enter phone number..." required>
+                </div>
+
+                <div class="input-group">
+                    <label for="image">Upload Image:</label>
+                    <input type="file" id="image">
+                </div>
+
+                <button type="submit">➕ Add Contact</button>
+            </form>
+        </div>
+
+        <!-- Right Section - Contact List -->
+        <div class="right-section">
+            <h2>📜 Contact List 📜</h2>
+            <div id="contactList"></div>
+            <button id="deleteSelected">❌ Delete Selected Contacts</button>
+        </div>
+
+    </div>
+
+    <script src="../JS/PhoneBookUI.js"></script>
+
+</body>
+</html>
