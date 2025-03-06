@@ -1,57 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="he">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Book</title>
-    <link rel="stylesheet" href="../CSS/PhoneBookUI.css">
-</head>
+  <meta charset="UTF-8">
+  <title>ניהול ספר טלפונים משופר</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- קישור לקובץ ה-CSS -->
+  <link rel="stylesheet" href="../css/PhoneBookUI.css">
+</head>
 <body>
 
-    <div class="container">
+  <!-- עוטף ראשי שמרכז את התוכן -->
+  <div class="page-container">
 
-        <!-- Left Section - Contact Form -->
-        <div class="left-section">
-            <h1>📞 Phone Book 📞</h1>
+    <!-- כותרת גדולה עם אייקון -->
+    <h1 class="main-title">
+      <img src="https://img.icons8.com/color/48/phone.png" alt="phone-icon"/>
+      Phone Book System
+    </h1>
 
-            <!-- Add Contact Form -->
-            <form id="contactForm">
-                <div class="input-group">
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" placeholder="Enter first name..." required>
-                </div>
-
-                <div class="input-group">
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" placeholder="Enter last name..." required>
-                </div>
-
-                <div class="input-group">
-                    <label for="phone">Phone:</label>
-                    <input type="text" id="phone" placeholder="Enter phone number..." required>
-                </div>
-
-                <div class="input-group">
-                    <label for="image">Upload Image:</label>
-                    <input type="file" id="image">
-                </div>
-
-                <button type="submit">➕ Add Contact</button>
-            </form>
-        </div>
-
-        <!-- Right Section - Contact List -->
-        <div class="right-section">
-            <h2>📜 Contact List 📜</h2>
-            <div id="contactList"></div>
-            <button id="deleteSelected">❌ Delete Selected Contacts</button>
-        </div>
-
+    <!-- ========== מסך כניסה ========== -->
+    <div id="loginSection" class="container-auth" style="display: block;">
+      <h2>כניסה למערכת</h2>
+      <p>ברוך הבא! התחבר כדי לגשת לספר הטלפונים שלך.</p>
+      <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="שם משתמש" required>
+        <input type="password" id="loginPassword" placeholder="סיסמה" required>
+        <button type="submit">התחבר</button>
+      </form>
+      <p>אין לך חשבון? <a href="#" id="showRegister">הרשם כאן</a></p>
     </div>
 
-    <script src="../JS/PhoneBookUI.js"></script>
+    <!-- ========== מסך רישום ========== -->
+    <div id="registerSection" class="container-auth" style="display: none;">
+      <h2>רישום משתמש חדש</h2>
+      <p>צור חשבון חדש כדי להתחיל לנהל את אנשי הקשר שלך!</p>
+      <form id="registerForm">
+        <input type="text" id="registerUsername" placeholder="שם משתמש" required>
+        <input type="password" id="registerPassword" placeholder="סיסמה" required>
+        <button type="submit">הרשם</button>
+      </form>
+      <p>כבר רשום? <a href="#" id="showLogin">התחבר כאן</a></p>
+    </div>
 
+    <!-- ========== מסך ספר טלפונים (אחרי התחברות) ========== -->
+    <div id="phoneBookSection">
+      <div class="phonebook-container">
+
+        <!-- טופס הוספת איש קשר -->
+        <div class="add-contact-section">
+          <h2>הוספת איש קשר</h2>
+          <form id="contactForm">
+            <div class="input-group">
+              <label for="firstName">שם פרטי:</label>
+              <input type="text" id="firstName" required>
+            </div>
+            <div class="input-group">
+              <label for="lastName">שם משפחה:</label>
+              <input type="text" id="lastName" required>
+            </div>
+            <div class="input-group">
+              <label for="phone">טלפון:</label>
+              <input type="text" id="phone" required>
+            </div>
+            <div class="input-group">
+              <label for="image">תמונה:</label>
+              <input type="file" id="image">
+            </div>
+            <button type="submit">➕ הוסף איש קשר</button>
+          </form>
+        </div>
+
+        <!-- רשימת אנשי קשר -->
+        <div class="contact-list-section">
+          <h2>רשימת אנשי קשר</h2>
+          <div class="contact-list" id="contactList">
+            <!-- אנשי הקשר יופיעו כאן -->
+          </div>
+          <!-- מחיקת נבחרים -->
+          <button id="deleteSelected">❌ מחיקת נבחרים</button>
+        </div>
+
+      </div>
+
+      <!-- כפתור התנתקות -->
+      <div id="logoutBtnContainer">
+        <button id="logout">התנתק</button>
+      </div>
+    </div><!-- /phoneBookSection -->
+
+  </div><!-- /page-container -->
+
+  <!-- טעינת קבצי JS לפי הסדר: fajax -> api -> app -->
+  <script src="../js/fajax.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/app.js"></script>
 </body>
 </html>
