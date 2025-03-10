@@ -1,84 +1,105 @@
 <!DOCTYPE html>
 <html lang="he">
+
 <head>
   <meta charset="UTF-8">
   <title>ניהול ספר טלפונים משופר</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- קישור לקובץ ה-CSS -->
+  <!-- CSS קישור לקובץ ה  -->
   <link rel="stylesheet" href="../css/PhoneBookUI.css">
 </head>
+
 <body>
 
-  <!-- עוטף ראשי שמרכז את התוכן -->
+  <!-------- עוטף ראשי שמרכז את התוכן -------->
   <div class="page-container">
 
-    <!-- כותרת גדולה עם אייקון -->
+    <!------- הכותרת הראשית עם האייקון ------->
     <h1 class="main-title">
-      <img src="https://img.icons8.com/color/48/phone.png" alt="phone-icon"/>
+      <img src="https://img.icons8.com/color/48/phone.png" alt="phone-icon" />
       Phone Book System
     </h1>
 
-    <!-- ========== מסך כניסה ========== -->
+    <!--================================== מסך כניסה ====================================-->
+
     <div id="loginSection" class="container-auth" style="display: block;">
+
       <h2>כניסה למערכת</h2>
       <p>ברוך הבא! התחבר כדי לגשת לספר הטלפונים שלך.</p>
+
       <form id="loginForm">
-        <input type="text" id="loginUsername" placeholder="שם משתמש" required>
-        <input type="password" id="loginPassword" placeholder="סיסמה" required>
+        <input type="text" id="loginUsername" placeholder="שם משתמש:" required>
+        <input type="password" id="loginPassword" placeholder="סיסמא:" required>
         <button type="submit">התחבר</button>
       </form>
+
       <p>אין לך חשבון? <a href="#" id="showRegister">הרשם כאן</a></p>
     </div>
 
-    <!-- ========== מסך רישום ========== -->
+    <!--================================== מסך רישום ====================================-->
+
     <div id="registerSection" class="container-auth" style="display: none;">
+
       <h2>רישום משתמש חדש</h2>
       <p>צור חשבון חדש כדי להתחיל לנהל את אנשי הקשר שלך!</p>
+
       <form id="registerForm">
-        <input type="text" id="registerUsername" placeholder="שם משתמש" required>
-        <input type="password" id="registerPassword" placeholder="סיסמה" required>
+        <input type="text" id="registerUsername" placeholder="שם משתמש:" required>
+        <input type="password" id="registerPassword" placeholder="סיסמא:" required>
         <button type="submit">הרשם</button>
       </form>
+
       <p>כבר רשום? <a href="#" id="showLogin">התחבר כאן</a></p>
+
     </div>
 
-    <!-- ========== מסך ספר טלפונים (אחרי התחברות) ========== -->
+    <!--===================== מסך ספר הטלפונים (אחרי התחברות)  ========================-->
+
     <div id="phoneBookSection">
       <div class="phonebook-container">
 
         <!-- טופס הוספת איש קשר -->
         <div class="add-contact-section">
+
           <h2>הוספת איש קשר</h2>
           <form id="contactForm">
+
             <div class="input-group">
               <label for="firstName">שם פרטי:</label>
               <input type="text" id="firstName" required>
             </div>
+
             <div class="input-group">
               <label for="lastName">שם משפחה:</label>
               <input type="text" id="lastName" required>
             </div>
+
             <div class="input-group">
               <label for="phone">טלפון:</label>
               <input type="text" id="phone" required>
             </div>
+
             <div class="input-group">
               <label for="image">תמונה:</label>
               <input type="file" id="image">
             </div>
-            <button type="submit">➕ הוסף איש קשר</button>
+
+            <button type="submit"> הוסף איש קשר➕</button>
           </form>
         </div>
 
-        <!-- רשימת אנשי קשר -->
+        <!--------- רשימת אנשי קשר --------->
         <div class="contact-list-section">
+
           <h2>רשימת אנשי קשר</h2>
+
           <div class="contact-list" id="contactList">
             <!-- אנשי הקשר יופיעו כאן -->
           </div>
+
           <!-- מחיקת נבחרים -->
-          <button id="deleteSelected">❌ מחיקת נבחרים</button>
+          <button id="deleteSelected"> מחיקת נבחרים❌</button>
         </div>
 
       </div>
@@ -87,13 +108,17 @@
       <div id="logoutBtnContainer">
         <button id="logout">התנתק</button>
       </div>
-    </div><!-- /phoneBookSection -->
 
+    </div><!-- /phoneBookSection -->
   </div><!-- /page-container -->
 
-  <!-- טעינת קבצי JS לפי הסדר: fajax -> api -> app -->
+
+  <!--=================================================================================-->
+
+  <!-- לפי הסדר JS טעינת קבצי: fajax -> api -> app -->
   <script src="../js/fajax.js"></script>
   <script src="../js/api.js"></script>
   <script src="../js/app.js"></script>
 </body>
+
 </html>

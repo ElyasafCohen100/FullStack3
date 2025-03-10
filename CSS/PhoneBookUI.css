@@ -1,243 +1,272 @@
 /* ==== 1) גוף הדף – רקע מדורג, פונט בסיסי ועוד ==== */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    direction: rtl;
-    background: linear-gradient(160deg, #d2e7ff 0%, #f2f8ff 100%);
-    min-height: 100vh;
-  }
-  
-  /* ==== 2) עוטף כללי שמרכז את התוכן ==== */
-  .page-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* ==== 3) כותרת ראשית עם אייקון ==== */
-  h1.main-title {
-    text-align: center;
-    font-size: 3rem;
-    margin: 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  h1.main-title img {
-    width: 50px;
-    height: 50px;
-  }
-  
-  /* ======== מסכי כניסה/רישום ======== */
-  .container-auth {
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    padding: 20px 30px;
-    text-align: center;
-  }
-  .container-auth h2 {
-    margin-top: 0;
-  }
-  .container-auth form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 15px;
-  }
-  .container-auth form input {
-    padding: 12px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-  }
-  .container-auth form button {
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    padding: 12px;
-    border-radius: 25px;
-    border: none;
-    font-size: 1rem;
-  }
-  .container-auth form button:hover {
-    background-color: #45a049;
-  }
-  .container-auth a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  .container-auth a:hover {
-    text-decoration: underline;
-  }
-  
-  /* ======== מסך ספר הטלפונים ======== */
-  #phoneBookSection {
-    display: none; /* מוסתר בהתחלה עד שהמשתמש מתחבר */
-    margin-top: 30px;
-  }
-  
-  /* פריסת ספר הטלפונים (טופס משמאל, רשימה מימין) */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  background: linear-gradient(160deg, #d2e7ff 0%, #f2f8ff 100%);
+  min-height: 100vh;
+}
+
+/* ==== 2) עוטף כללי שמרכז את התוכן ==== */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ==== 3) כותרת ראשית עם אייקון ==== */
+h1.main-title {
+  text-align: center;
+  font-size: 3rem;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+h1.main-title img {
+  width: 50px;
+  height: 50px;
+}
+
+/* ======== מסכי כניסה / רישום ======== */
+.container-auth {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.container-auth h2 {
+  margin-top: 0;
+}
+
+.container-auth form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.container-auth form input {
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.container-auth form button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+}
+
+.container-auth form button:hover {
+  background-color: #45a049;
+}
+
+.container-auth a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.container-auth a:hover {
+  text-decoration: underline;
+}
+
+/* =============================== מסך ספר הטלפונים ============================== */
+#phoneBookSection {
+  /* מוסתר בהתחלה עד שהמשתמש מתחבר */
+  display: none;
+  margin-top: 30px;
+}
+
+/* פריסת ספר הטלפונים (טופס משמאל, רשימה מימין) */
+.phonebook-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* עיצוב תיבת הוספת איש קשר */
+.add-contact-section {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 320px;
+}
+
+.add-contact-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-group label {
+  font-weight: bold;
+}
+
+.input-group input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.add-contact-section button {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* עיצוב רשימת אנשי קשר */
+.contact-list-section {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 500px;
+}
+
+.contact-list-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 500px;
+  /* גלילה אם יש הרבה אנשי קשר */
+  overflow-y: auto;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.contact img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contact-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.contact-phone {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.edit-btn {
+  background-color: #ffcc00;
+  color: black;
+  padding: 7px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  border: none;
+}
+
+.edit-btn:hover {
+  background-color: #ffaa00;
+}
+
+.delete-btn {
+  background-color: orangered;
+  color: white;
+  padding: 7px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: none;
+}
+
+.delete-btn:hover {
+  background-color: red;
+}
+
+#deleteSelected {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#deleteSelected:hover {
+  background-color: darkred;
+}
+
+/* כפתור התנתקות */
+#logoutBtnContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#logout {
+  background-color: #999;
+  color: #fff;
+  width: 150px;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#logout:hover {
+  background-color: #777;
+}
+
+/* רספונסיביות: במסכים קטנים הטפסים מסתדרים אנכית */
+@media (max-width: 768px) {
   .phonebook-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  /* עיצוב תיבת הוספת איש קשר */
-  .add-contact-section {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    padding: 20px;
-    width: 320px;
-  }
-  .add-contact-section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .input-group {
-    margin-bottom: 15px;
-    display: flex;
     flex-direction: column;
-    gap: 5px;
-  }
-  .input-group label {
-    font-weight: bold;
-  }
-  .input-group input {
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-  }
-  .add-contact-section button {
-    margin-top: 10px;
-    width: 100%;
-  }
-  
-  /* עיצוב רשימת אנשי קשר */
-  .contact-list-section {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    padding: 20px;
-    width: 500px;
-  }
-  .contact-list-section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .contact-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-height: 500px;
-    overflow-y: auto; /* גלילה אם יש הרבה אנשי קשר */
-  }
-  .contact {
-    display: flex;
     align-items: center;
-    gap: 15px;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.1);
   }
-  .contact img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
+
+  .add-contact-section,
+  .contact-list-section {
+    width: 90%;
+    max-width: 400px;
   }
-  .contact-info {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .contact-name {
-    font-weight: bold;
-    font-size: 1rem;
-  }
-  .contact-phone {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  .edit-btn {
-    background-color: #ffcc00;
-    color: black;
-    padding: 7px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    border: none;
-  }
-  .edit-btn:hover {
-    background-color: #ffaa00;
-  }
-  .delete-btn {
-    background-color: orangered;
-    color: white;
-    padding: 7px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    border: none;
-  }
-  .delete-btn:hover {
-    background-color: red;
-  }
-  
-  #deleteSelected {
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    padding: 10px 15px;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  #deleteSelected:hover {
-    background-color: darkred;
-  }
-  
-  /* כפתור התנתקות */
-  #logoutBtnContainer {
-    text-align: center;
-    margin-top: 20px;
-  }
-  #logout {
-    background-color: #999;
-    color: #fff;
-    width: 150px;
-    padding: 12px;
-    border-radius: 25px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  #logout:hover {
-    background-color: #777;
-  }
-  
-  /* רספונסיביות: במסכים קטנים הטפסים מסתדרים אנכית */
-  @media (max-width: 768px) {
-    .phonebook-container {
-      flex-direction: column;
-      align-items: center;
-    }
-    .add-contact-section,
-    .contact-list-section {
-      width: 90%;
-      max-width: 400px;
-    }
-  }
-  
+}
