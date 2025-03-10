@@ -75,6 +75,22 @@ window.api = (function(){
         };
       }
     }
+    function getContacts(query = "") {
+      const user = JSON.parse(localStorage.getItem("loggedInUser"));
+      if (!user) {
+          return { status: 403, body: { success: false, message: "לא מחובר" } };
+      }
+      let contacts = loadUserContacts(user.username);  // שליפת אנשי קשר מה-LocalStorage
+      
+      // אם יש חיפוש לפי שם, סינון רשימת אנשי הקשר
+      if (query) {
+          contacts = contacts.filter(c => 
+              c.firstName.toLowerCase().includes(query.toLowerCase())
+          );
+      }
+  
+      return { status: 200, body: { success: true, data: contacts } };
+  }
   
     function logout() {
       setLoggedInUser(null);
@@ -161,9 +177,15 @@ window.api = (function(){
         return logout();
       }
       // שליפת אנשי קשר
-      if (url === "/api/contacts" && method === "GET") {
-        return getContacts();
+      // שליפת אנשי קשר (כולל תמיכה בחיפוש לפי שם)
+      if (url.startsWith("/api/contacts?name=") && method === "GET") {
+      const query = url.split("=")[1];  // מקבל את הערך אחרי ?name=
+      return getContacts(query);
       }
+      if (url === "/api/contacts" && method === "GET") {
+      return getContacts();  // שליפה רגילה בלי חיפוש
+      }
+
       // הוספת איש קשר
       if (url === "/api/contacts" && method === "POST") {
         return addContact(reqData);

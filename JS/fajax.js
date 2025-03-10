@@ -48,15 +48,22 @@ class FXMLHttpRequest {
   window.fakeNetwork = function(method, url, data, callback) {
     let parsedData = null;
     try {
-      parsedData = data ? JSON.parse(data) : null;
-    } catch (err) {
-      // שגיאה בפריסת ה-JSON
+        parsedData = data ? JSON.parse(data) : null;
+    } catch (err) {}
+
+    // הסתברות של 20% להשמטת הודעה
+    const lossProbability = Math.random();
+    if (lossProbability < 0.2) {  
+        console.warn(`📡 הודעה אבדה ברשת: ${method} ${url}`);
+        return;
     }
-  
-    // מפעילים את הפונקציה הראשית ב- api.js
-    const resp = window.api.handleRequest(method, url, parsedData);
-  
-    // מעבירים את התשובה חזרה ב"CallBack"
-    callback(resp);
-  };
+
+    // השהיית תשובה אקראית (0-1 שניות)
+    const delay = Math.random() * 1000;
+    setTimeout(() => {
+        const resp = window.api.handleRequest(method, url, parsedData);
+        callback(resp);
+    }, delay);
+};
+
   
